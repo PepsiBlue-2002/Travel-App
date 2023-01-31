@@ -1,17 +1,94 @@
 import React, {useState} from 'react';
-import {Text, TextInput, View, ScrollView, Share } from 'react-native';
+import {Text, TextInput, View, ScrollView, Share, Button, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
 import DirectMessagePage from '../Pages/DirectMessagePage';
-import { Button } from 'react-native-elements/dist/buttons/Button';
+import { useNavigation } from '@react-navigation/native';
 
-/* From React Native docs - handling text input
-const PizzaTranslator = () => {
+//Top Header
+const Header = () => {
+  return (
+    <View style={styles.headerContainer}>
+      <ProfileButton />
+      <Text style={styles.headerText}>Activity Feed</Text>
+      <DMButton />
+    </View>
+  );
+}
+
+//Second Header
+const FeedTop = () => {
+  return (
+    <View style={styles.headerContainer2}>
+
+    </View>
+  )
+};
+
+//Button for Comment
+const DMButton = () => {
+  const navigation = useNavigation();
+//The navigation doesn't work
+  return (
+    <TouchableOpacity onPress={() => navigation.navigate('Pages/DirectMessagePage.js')}>
+      <Icon
+        name='inbox'
+        type='font-awesome'
+        size={24}
+        iconStyle={{ width: 24 }}
+        color='black'
+      />
+    </TouchableOpacity>
+  );
+};
+
+//Button for Profile
+const ProfileButton = () => {
+  const navigation = useNavigation();
+//The navigation doesn't work
+  return (
+<TouchableOpacity onPress={() => navigation.navigate()}>
+      <Icon
+        name='user'
+        type='font-awesome'
+        size={24}
+        iconStyle={{ width: 24 }}
+        color='black'
+      />
+    </TouchableOpacity>
+  );
+};
+
+/* Share Button, not entirely sure how to implement yet
+const ShareButton = () => {
+  const handleShare = async () => {
+    try {
+      const result = await Share.share({
+        message: 'Check out this content!',
+      });
+      if (result.action === Share.sharedAction) {
+        console.log('Content shared successfully');
+      } else if (result.action === Share.dismissedAction) {
+        console.log('Sharing dismissed');
+      }
+    } catch (error) {
+      console.log('Error sharing content', error);
+    }
+  };
+
+  return (
+    <Button title="Share" onPress={handleShare} />
+  );
+};
+*/
+
+
+const Post = () => {
   const [text, setText] = useState('');
   return (
-    <View style={{padding: 10}}>
+    <View style={styles.postView}>
       <TextInput
         style={{height: 40}}
-        placeholder="Type here to translate!"
+        placeholder="Type here to post!"
         onChangeText={newText => setText(newText)}
         defaultValue={text}
       />
@@ -24,71 +101,25 @@ const PizzaTranslator = () => {
     </View>
   );
 };
-*/
-
-const FeedInput = () => {
-  return (
-    <View style={styles.headerContainer2}>
-      <Button
-        name='Add Text'
-        options={{
-          title: 'Add Text',
-          buttonIcon: () => (
-            <Icon reverse
-              name='message'
-              type='font-awesome'
-              size={24}
-              iconStyle={{ width: 24 }}
-              color='black'
-            />
-          )
-        }}
-      />
-      <Button
-        name='Add An Image'
-        options={{
-          title: 'Add An Image',
-          buttonIcon: () => (
-            <Icon reverse
-              name='Image'
-              type='font-awesome'
-              size={24}
-              iconStyle={{ width: 24 }}
-              color='black'
-            />
-          )
-        }}
-      />
-
-    </View>
-  )
-};
-  
-  
 
 
-const Header = () => {
-  return (
-    <View style={styles.headerContainer}>
-      <Text style={styles.headerText}>Activity Feed</Text>
-    </View>
-  );
-}
 
 //hsl(120, 100%, 50%)
 
+//This the return to connect everything
 const HomePage = () => {
   return (
       <ScrollView>
         <Header />
-        <FeedInput />
-      <Text> You have no activity to show.</Text>
+        <FeedTop />
+        <Post />
 
       </ScrollView>
   );
 }
 
 
+// Styles
 const styles = {
   headerContainer: {
       backgroundColor: '#F8F8F8',
@@ -100,7 +131,8 @@ const styles = {
       shadowOffset: { width: 0, height: 3 },
       shadowOpacity: 0.2,
       elevation: 2,
-      position: 'relative'
+      position: 'relative',
+      flexDirection: 'row', 
   },
   headerContainer2: {
     backgroundColor: '#D6DBDF',
@@ -115,11 +147,15 @@ const styles = {
     position: 'relative'
 },
   headerText: {
-      fontSize: 20
-  },
-  directMessagesButton: {
-    alignItems: 'right'
+      fontSize: 20,
+      flex: 0.95,
+      textAlign: 'center',
+},
+  postView: {
+    margin: 30,
+    alignItems: 'center'
   }
+
 }
 
 

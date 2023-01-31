@@ -90,7 +90,7 @@ const Main = () => {
           name='FAQ'
           component={FAQScreen}
           options={{
-            title: 'About',
+            title: 'FAQ',
             drawerIcon: ({ color }) => (
               <Icon
                 name="info"

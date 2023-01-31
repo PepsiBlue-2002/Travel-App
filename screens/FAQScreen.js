@@ -2,7 +2,7 @@ import React from 'react';
 import { Platform, View, ScrollView, Text, StyleSheet } from 'react-native'
 
 
-const Flex = () => {
+const FAQScreen = () => {
     return (
       <View
         style={[
@@ -13,19 +13,16 @@ const Flex = () => {
           },
         ]}>
         <View style={{flex: 1, backgroundColor: 'red'}} />
+        <View>
+          <Text>Under Construction! Check back soon!</Text>
+        </View>
         <View style={{flex: 2, backgroundColor: 'darkorange'}} />
         <View style={{flex: 3, backgroundColor: 'green'}} />
       </View>
     );
   };
 
-const FAQScreen = () => {
-    return (
-        <ScrollView>
-            
-        </ScrollView>
-    );
-  };
+
 
 
 
