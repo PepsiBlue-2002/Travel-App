@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import {Text, TextInput, View, ScrollView, Share, Button, TouchableOpacity } from 'react-native';
+import {Text, TextInput, View, ScrollView, Share, Button, 
+  TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { Icon } from 'react-native-elements';
 import DirectMessagePage from '../Pages/DirectMessagePage';
 import { useNavigation } from '@react-navigation/native';
+
 
 //Top Header
 const Header = () => {
@@ -36,6 +38,30 @@ const FeedTop = () => {
     </ScrollView>
   )
 };
+
+
+const BackgroundImageWithButton = ({ source, buttonText }) => {
+  return (
+    <ImageBackground source={source} style={styles.backgroundImage}>
+      <View style={styles.overlay}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>{buttonText}</Text>
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
+  );
+};
+
+
+/*
+const Header3 = () => {
+  return (
+    <View style={styles.headerContainer3}>
+      <Text>Add A Post | Add A Yarn</Text>
+    </View>
+  )
+};
+*/
 
 
 //Button for Comment
@@ -96,19 +122,6 @@ const ShareButton = () => {
 */
 
 
-const Post = () => {
-  const [text, setText] = useState('');
-  return (
-    <View style={styles.postView}>
-      <TextInput
-        style={{height: 40}}
-        placeholder="Type here to post!"
-        onChangeText={newText => setText(newText)}
-        defaultValue={text}
-      />
-    </View>
-  );
-};
 
 
 
@@ -118,7 +131,8 @@ const HomePage = () => {
       <ScrollView>
         <Header />
         <FeedTop />
-        <Post />
+        <BackgroundImageWithButton />
+        
         
 
       </ScrollView>
@@ -128,19 +142,26 @@ const HomePage = () => {
 
 // Styles
 const styles = {
+//Activity Feed Header
   headerContainer: {
-      backgroundColor: '#00b377',
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingTop: 30,
-      paddingBottom: 10,
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 3 },
-      shadowOpacity: 0.2,
-      elevation: 2,
-      position: 'relative',
-      flexDirection: 'row', 
+    backgroundColor: '#00b377',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 30,
+    paddingBottom: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.2,
+    elevation: 2,
+    position: 'relative',
+    flexDirection: 'row', 
   },
+  headerText: {
+    fontSize: 20,
+    flex: 0.95,
+    textAlign: 'center',
+  },
+//Profile Tales
   headerContainer2: {
     backgroundColor: '#D6DBDF',
     alignItems: 'center',
@@ -152,17 +173,17 @@ const styles = {
     shadowOpacity: 0.2,
     elevation: 2,
     flexDirection: 'row'
-},
-  headerText: {
-      fontSize: 20,
-      flex: 0.95,
-      textAlign: 'center',
-},
+  },
+//Add a Post, Add a Tale, etc.
+  headerContainer3: {
+    backgroundColor: '#00b377',
+  },
+//Currently not in use
   postView: {
     margin: 50,
     alignItems: 'center',
     borderWidth: 1.2,
-  }
+  },
 
 }
 
