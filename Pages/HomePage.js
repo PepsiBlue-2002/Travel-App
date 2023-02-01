@@ -18,11 +18,25 @@ const Header = () => {
 //Second Header
 const FeedTop = () => {
   return (
-    <View style={styles.headerContainer2}>
-
-    </View>
+    <ScrollView horizontal={true}>
+      <View style={styles.headerContainer2}>
+        <View style={{ flexDirection: 'row' }}>
+          <Icon name="circle" size={75} color="white" />
+          <Icon name="circle" size={75} color="white" />
+          <Icon name="circle" size={75} color="white" />
+          <Icon name="circle" size={75} color="white" />
+          <Icon name="circle" size={75} color="white" />
+          <Icon name="circle" size={75} color="white" />
+          <Icon name="circle" size={75} color="white" />
+          <Icon name="circle" size={75} color="white" />
+        </View>
+        {/*broken, need to place underneath - CSS wants to fight me just because I'm wrong*/}
+      <Text style={{ fontSize: 8, marginTop: 10 }}>Your Story</Text>
+      </View>
+    </ScrollView>
   )
 };
+
 
 //Button for Comment
 const DMButton = () => {
@@ -92,19 +106,11 @@ const Post = () => {
         onChangeText={newText => setText(newText)}
         defaultValue={text}
       />
-      <Text style={{padding: 10, fontSize: 42}}>
-        {text
-          .split(' ')
-          .map(word => word && '🍕')
-          .join(' ')}
-      </Text>
     </View>
   );
 };
 
 
-
-//hsl(120, 100%, 50%)
 
 //This the return to connect everything
 const HomePage = () => {
@@ -113,6 +119,7 @@ const HomePage = () => {
         <Header />
         <FeedTop />
         <Post />
+        
 
       </ScrollView>
   );
@@ -122,7 +129,7 @@ const HomePage = () => {
 // Styles
 const styles = {
   headerContainer: {
-      backgroundColor: '#F8F8F8',
+      backgroundColor: '#00b377',
       alignItems: 'center',
       justifyContent: 'center',
       paddingTop: 30,
@@ -144,7 +151,7 @@ const styles = {
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     elevation: 2,
-    position: 'relative'
+    flexDirection: 'row'
 },
   headerText: {
       fontSize: 20,
@@ -152,8 +159,9 @@ const styles = {
       textAlign: 'center',
 },
   postView: {
-    margin: 30,
-    alignItems: 'center'
+    margin: 50,
+    alignItems: 'center',
+    borderWidth: 1.2,
   }
 
 }
