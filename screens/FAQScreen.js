@@ -15,6 +15,7 @@ const FAQScreen = () => {
   const [expanded, setExpanded] = React.useState(false);
   const [expanded2, setExpanded2] = React.useState(false);
   const [expanded3, setExpanded3] = React.useState(false);
+  const [expanded4, setExpanded4] = React.useState(false);
 
   return (
     <View style={styles.container}>
@@ -51,17 +52,33 @@ const FAQScreen = () => {
           </View>
         )}
 
-<TouchableOpacity
+  <TouchableOpacity
           style={styles.questionContainer}
           onPress={() => setExpanded3(!expanded3)}
         >
-          <Text style={styles.questionText}>How do I find my friends?.</Text>
+          <Text style={styles.questionText}>How do I find my friends?</Text>
           <Text style={styles.icon}>{expanded3 ? '-' : '+'}</Text>
         </TouchableOpacity>
         {expanded3 && (
           <View style={styles.answerContainer}>
             <Text style={styles.answerText}>
               From any screen; swipe from left to right to pull up the sidebar and select Friends.
+            </Text>
+          </View>
+        )}
+
+  <TouchableOpacity
+          style={styles.questionContainer}
+          onPress={() => setExpanded4(!expanded4)}
+        >
+          <Text style={styles.questionText}>How do I send a direct message?</Text>
+          <Text style={styles.icon}>{expanded4 ? '-' : '+'}</Text>
+        </TouchableOpacity>
+        {expanded4 && (
+          <View style={styles.answerContainer}>
+            <Text style={styles.answerText}>
+              Click on the inbox icon on the top right corner of the Home page (where your Activity Feed is). You can send direct messages
+                to those in your group or to those who've been allowed to follow if the party leader(s) has allowed it.
             </Text>
           </View>
         )}

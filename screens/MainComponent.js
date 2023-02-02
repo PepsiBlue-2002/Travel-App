@@ -5,14 +5,16 @@ import {
   DrawerContentScrollView,
   DrawerItemList 
 } from '@react-navigation/drawer';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { Icon } from 'react-native-elements';
 import HomePage from '../Pages/HomePage';
 import FriendScreen from '../screens/FriendScreen';
 import AboutScreen from './AboutScreen';
 import FAQScreen from './FAQScreen';
+import DirectMessagePage from '../Pages/DirectMessagePage';
+import IntroScreen0 from './IntroScreen0';
 
 const Drawer = createDrawerNavigator();
-
 
 const CustomDrawerContent = (props) => (
   <DrawerContentScrollView {...props}>
@@ -27,17 +29,6 @@ const CustomDrawerContent = (props) => (
   </DrawerContentScrollView>
 )
 
-const HomeNavigator = () => {
-  const Stack = createStackNavigator();
-  <Stack.Navigator>
-          <Stack.Screen
-              name='Home'
-              component={HomePage}
-          />
-      </Stack.Navigator>
-};
-
-  
 const Main = () => {
   return (
     <View
@@ -47,11 +38,31 @@ const Main = () => {
           Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
       }}
     >
+
       <Drawer.Navigator
         initialRouteName='Home'
         drawerContent={CustomDrawerContent}
         drawerStyle={{ backgroundColor: '#D6DBDF' }}
-      >
+      > 
+      {/* This right here
+        <Drawer.Screen
+          name='Intro'
+          component={IntroScreen0}
+          options={{
+            title: 'Intro',
+            drawerIcon: () => (
+              <Icon
+                name='square'
+                type='font-awesome'
+                size={24}
+                iconStyle={{ width: 24 }}
+                color='red'
+              />
+            )
+          }}
+        />
+        */}
+
         <Drawer.Screen
           name='Home'
           component={HomePage}
@@ -118,9 +129,14 @@ const Main = () => {
               />
             )
           }}
-        />
-        
+        />        
       </Drawer.Navigator>
+
+      <Drawer.Screen
+          name='DM'
+          component={DirectMessagePage}
+      />
+
     </View>
   )
 }

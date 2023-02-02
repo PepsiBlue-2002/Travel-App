@@ -63,13 +63,15 @@ const Header3 = () => {
 };
 */
 
-
-//Button for Comment
 const DMButton = () => {
   const navigation = useNavigation();
-//The navigation doesn't work
+
+  const handleOnPressDMIcon = () => {
+    navigation.navigate('DirectMessagePage');
+  };
+
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Pages/DirectMessagePage.js')}>
+    <TouchableOpacity onPress={handleOnPressDMIcon}>
       <Icon
         name='inbox'
         type='font-awesome'
@@ -122,16 +124,12 @@ const ShareButton = () => {
 */
 
 
-
-
-
 //This the return to connect everything
 const HomePage = () => {
   return (
       <ScrollView>
         <Header />
         <FeedTop />
-        <BackgroundImageWithButton />
         
         
 
