@@ -12,10 +12,57 @@ import FriendScreen from '../screens/FriendScreen';
 import AboutScreen from './AboutScreen';
 import FAQScreen from './FAQScreen';
 import DirectMessagePage from '../Pages/DirectMessagePage';
+import ProfilePage from '../Pages/ProfilePage';
 import IntroScreen0 from './IntroScreen0';
 
 const Drawer = createDrawerNavigator();
 
+//Setup so the Icons on the Activity Feed would link better to their appropriate screens
+const HomeNavigator = () => {
+  const Stack = createStackNavigator();
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name='Home'
+        component={HomePage}
+        options={({ navigation }) => ({
+          title: 'Home',
+          headerShown: false
+        })}
+      />
+      <Stack.Screen
+        name='DirectMessagePage'
+        component={NestedStackNavigator}
+        options={{ title: 'DirectMessagePage', headerShown: false }}
+      />
+      <Stack.Screen
+        name='ProfilePage'
+        component={ProfilePage}
+        options={{ title: 'Profile Page' }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const NestedStackNavigator = () => {
+  const Stack = createStackNavigator();
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name='DirectMessagePage'
+        component={DirectMessagePage}
+        options={{ title: 'DirectMessagePage' }}
+      />
+      <Stack.Screen
+        name='ProfilePage'
+        component={ProfilePage}
+        options={{ title: 'Profile Page' }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+//Drawer
 const CustomDrawerContent = (props) => (
   <DrawerContentScrollView {...props}>
       <View style={styles.drawerHeader}>
@@ -29,6 +76,7 @@ const CustomDrawerContent = (props) => (
   </DrawerContentScrollView>
 )
 
+//Main is the export default, drawer screens in here
 const Main = () => {
   return (
     <View
@@ -65,7 +113,7 @@ const Main = () => {
 
         <Drawer.Screen
           name='Home'
-          component={HomePage}
+          component={HomeNavigator}
           options={{
             title: 'Home',
             drawerIcon: () => (
@@ -141,6 +189,7 @@ const Main = () => {
   )
 }
 
+//stylesheet for Main
 const styles = StyleSheet.create({
   drawerHeader: {
       backgroundColor: 'black',

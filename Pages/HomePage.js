@@ -3,7 +3,9 @@ import {Text, TextInput, View, ScrollView, Share, Button,
   TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { Icon } from 'react-native-elements';
 import DirectMessagePage from '../Pages/DirectMessagePage';
+import ProfilePage from '../Pages/ProfilePage';
 import { useNavigation } from '@react-navigation/native';
+
 
 
 //Top Header
@@ -65,13 +67,8 @@ const Header3 = () => {
 
 const DMButton = () => {
   const navigation = useNavigation();
-
-  const handleOnPressDMIcon = () => {
-    navigation.navigate('DirectMessagePage');
-  };
-
   return (
-    <TouchableOpacity onPress={handleOnPressDMIcon}>
+    <TouchableOpacity  onPress={() => navigation.navigate(DirectMessagePage)}>
       <Icon
         name='inbox'
         type='font-awesome'
@@ -86,9 +83,8 @@ const DMButton = () => {
 //Button for Profile
 const ProfileButton = () => {
   const navigation = useNavigation();
-//The navigation doesn't work
   return (
-<TouchableOpacity onPress={() => navigation.navigate()}>
+<TouchableOpacity onPress={() => navigation.navigate(ProfilePage)}>
       <Icon
         name='user'
         type='font-awesome'
