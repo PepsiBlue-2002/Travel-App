@@ -59,18 +59,6 @@ const FeedTop = () => {
 //Use flexDirection: 'column' for the posting/side actions
 
 
-
-const Header3 = () => {
-  return (
-  <ScrollView>
-    <View style={styles.headerContainer3}>
-      <Text>Add A Post | Add A Yarn</Text>
-    </View>
-    </ScrollView>
-  )
-};
-
-
 //Button for DirectMessages Inbox
 const DMButton = () => {
   const navigation = useNavigation();
@@ -103,7 +91,17 @@ const ProfileButton = () => {
   );
 };
 
-//Background Images Testings
+//For adding content? Been back-and-forth on this piece, may change it up.
+const Header3 = () => {
+  return (
+    <ScrollView>
+      <View style={styles.headerContainer3}>
+        <Text>Add A Tale | Add A Yarn</Text>
+      </View>
+    </ScrollView>
+  )
+};
+
 
 //Images used
 const bgimages = [Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8,

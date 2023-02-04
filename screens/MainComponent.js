@@ -97,7 +97,7 @@ const Main = () => {
           name='Intro'
           component={IntroScreen0}
           options={{
-            title: 'Intro',
+            title: 'Test',
             drawerIcon: () => (
               <Icon
                 name='square'

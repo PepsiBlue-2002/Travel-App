@@ -1,5 +1,6 @@
 import React from 'react';
 import { Platform, View, ScrollView, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { Divider } from 'react-native-elements';
 
 //FAQ Header - copied from HomePage.js; styles as well. Minor changes made so far.
 const FAQHeader = () => {
@@ -16,11 +17,13 @@ const FAQScreen = () => {
   const [expanded2, setExpanded2] = React.useState(false);
   const [expanded3, setExpanded3] = React.useState(false);
   const [expanded4, setExpanded4] = React.useState(false);
+  const [expanded5, setExpanded5] = React.useState(false);
 
   return (
     <View style={styles.container}>
       {/*FAQ Header and any future returns here */}
       <FAQHeader />
+      <Divider style={{ height: 1.5, backgroundColor: 'gray' }} />
       <ScrollView>
         <TouchableOpacity
           style={styles.questionContainer}
@@ -47,7 +50,7 @@ const FAQScreen = () => {
         {expanded2 && (
           <View style={styles.answerContainer}>
             <Text style={styles.answerText}>
-              Having a question is simply a statement. This is not a FAS (Frequently Announced Statement) page.
+              Having a question is simply a statement. This is not a FAS (Frequently Announced Statements) page.
             </Text>
           </View>
         )}
@@ -79,6 +82,22 @@ const FAQScreen = () => {
             <Text style={styles.answerText}>
               Click on the inbox icon on the top right corner of the Home page (where your Activity Feed is). You can send direct messages
                 to those in your group or to those who've been allowed to follow if the party leader(s) has allowed it.
+            </Text>
+          </View>
+        )}
+
+  <TouchableOpacity
+          style={styles.questionContainer}
+          onPress={() => setExpanded5(!expanded5)}
+        >
+          <Text style={styles.questionText}>Where are the background images from?</Text>
+          <Text style={styles.icon}>{expanded5 ? '-' : '+'}</Text>
+        </TouchableOpacity>
+        {expanded5 && (
+          <View style={styles.answerContainer}>
+            <Text style={styles.answerText}>
+              As of now all images come from unsplash.com - an open source photo site. Credits are listed below. {'\n'}{'\n'}
+              Photo Credits: Max Bender
             </Text>
           </View>
         )}
@@ -115,8 +134,9 @@ const styles = {
   answerText: {
     fontSize: 16,
   },
+  //Header
   headerContainer: {
-    backgroundColor: '#D6DBDF',
+    backgroundColor: '#f2f2f2',
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 15,
