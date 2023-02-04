@@ -92,7 +92,7 @@ const Main = () => {
         drawerContent={CustomDrawerContent}
         drawerStyle={{ backgroundColor: '#D6DBDF' }}
       > 
-      {/* This right here
+      {/*Testing Screen - accessible by drawer nav, should not affect anything if removed*/}
         <Drawer.Screen
           name='Intro'
           component={IntroScreen0}
@@ -109,7 +109,7 @@ const Main = () => {
             )
           }}
         />
-        */}
+        
 
         <Drawer.Screen
           name='Home'
