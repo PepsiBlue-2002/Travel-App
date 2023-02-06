@@ -192,7 +192,7 @@ const styles = {
     fontSize: 20,
      color: 'black',
      padding: 10,
-     margin: 10,
+     margin: 15,
   },
 //Profile Tales (FeedTop)
   headerContainer2: {
