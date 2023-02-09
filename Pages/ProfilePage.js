@@ -1,20 +1,19 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { Text, View, ScrollView } from 'react-native';
+import { Icon, Divider } from 'react-native-elements';
+import * as ImagePicker from 'expo-image-picker';
+import * as ImageManipulator from 'expo-image-manipulator';
+import * as MediaLibrary from 'expo-media-library';
 
 const ProfilePage = () => {
   return (
-    <View>
-      <View style={styles.headerContainer}>
-        <Text style={styles.headerText}>Profile</Text>
-      </View>
       <ScrollView>
-        <View style={{ flexDirection: 'row', position: 'center' }}>
+        <Divider style={{ height: 1.5, backgroundColor: 'gray' }} />
+        <View>
           {/*Insert Picture here, copy import camera api from Extra.js*/}
           <Icon name="circle" size={75} color="white" />
         </View>
       </ScrollView>
-    </View>
   );
 }
 
