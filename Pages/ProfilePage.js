@@ -4,6 +4,7 @@ import { Icon, Divider } from 'react-native-elements';
 import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as MediaLibrary from 'expo-media-library';
+import LoginScreen from '../screens/LoginScreen';
 
 const ProfilePage = () => {
   return (
@@ -12,6 +13,7 @@ const ProfilePage = () => {
         <View>
           {/*Insert Picture here, copy import camera api from Extra.js*/}
           <Icon name="circle" size={75} color="white" />
+          <LoginScreen />
         </View>
       </ScrollView>
   );
