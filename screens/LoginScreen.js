@@ -6,8 +6,8 @@ import * as SecureStore from 'expo-secure-store';
 import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as MediaLibrary from 'expo-media-library';
-import { baseURL } from '../shared/baseURL';
-import logo from '../assets/images/logo.png';
+//import { baseURL } from '../shared/baseURL';
+//import logo from '../assets/images/logo.png';
 
 const LoginTab = ({ navigation }) => {
     const [username, setUsername] = useState('');

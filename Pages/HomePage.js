@@ -6,6 +6,10 @@ import { Icon, Divider } from 'react-native-elements';
 import DirectMessagePage from '../Pages/DirectMessagePage';
 import ProfilePage from '../Pages/ProfilePage';
 import { useNavigation } from '@react-navigation/native';
+//Don't know if these will be used here or not.
+import * as ImagePicker from 'expo-image-picker';
+import * as ImageManipulator from 'expo-image-manipulator';
+import * as MediaLibrary from 'expo-media-library';
 //Background Images
 import Image1 from '../assets/images/HomeScreen/atrio.jpg';
 import Image2 from '../assets/images/HomeScreen/2-rock.jpg';
