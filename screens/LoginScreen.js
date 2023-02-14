@@ -6,8 +6,8 @@ import * as SecureStore from 'expo-secure-store';
 import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as MediaLibrary from 'expo-media-library';
-//import { baseURL } from '../shared/baseURL';
-//import logo from '../assets/images/logo.png';
+import { baseURL } from '../shared/baseURL';
+import czsosa from '../assets/images/czsosa.png';
 
 const LoginTab = ({ navigation }) => {
     const [username, setUsername] = useState('');
@@ -112,7 +112,7 @@ const RegisterTab = () => {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [remember, setRemember] = useState(false);
-    const [imageUrl, setImageUrl] = useState(baseURL + 'images/logo.png');
+    const [imageUrl, setImageUrl] = useState(baseURL + 'czsosa.png');
 
     const handleRegister = () => {
         const userInfo = {
@@ -188,7 +188,7 @@ const RegisterTab = () => {
                 <View style={styles.imageContainer}>
                     <Image
                         source={{ uri: imageUrl }}
-                        loadingIndicatorSource={logo}
+                        loadingIndicatorSource={czsosa}
                         style={styles.image}
                     />
                     <Button title='Camera' onPress={getImageFromCamera} />
