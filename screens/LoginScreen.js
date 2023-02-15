@@ -7,7 +7,6 @@ import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as MediaLibrary from 'expo-media-library';
 import { baseURL } from '../shared/baseURL';
-import czsosa from '../assets/images/czsosa.png';
 
 const LoginTab = ({ navigation }) => {
     const [username, setUsername] = useState('');
@@ -112,7 +111,7 @@ const RegisterTab = () => {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [remember, setRemember] = useState(false);
-    const [imageUrl, setImageUrl] = useState(baseURL + 'czsosa.png');
+    //const [imageUrl, setImageUrl] = useState(baseURL + 'logo.png');
 
     const handleRegister = () => {
         const userInfo = {
@@ -186,11 +185,12 @@ const RegisterTab = () => {
         <ScrollView>
             <View style={styles.container}>
                 <View style={styles.imageContainer}>
-                    <Image
+                   {/* <Image
                         source={{ uri: imageUrl }}
-                        loadingIndicatorSource={czsosa}
+                        loadingIndicatorSource={logo}
                         style={styles.image}
                     />
+                   */}
                     <Button title='Camera' onPress={getImageFromCamera} />
                     <Button title="Gallery" onPress={getImageFromGallery} />
                 </View>
