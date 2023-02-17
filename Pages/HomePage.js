@@ -1,6 +1,6 @@
 import React, {useState, useEffect, Component } from 'react';
 import {Text, TextInput, View, ScrollView, Share, Button, 
-  TouchableOpacity, Image, ImageBackground,  Animated } from 'react-native';
+  TouchableOpacity, Image, ImageBackground,  Animated, SafeAreaView } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { Icon, Divider } from 'react-native-elements';
 import DirectMessagePage from '../Pages/DirectMessagePage';
@@ -110,7 +110,6 @@ const Header3 = () => {
 //Images used
 const bgimages = [Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8,
   Image9, Image10, Image11, Image12]
-
 const InitialBackground = () => {
   //Tried to make isVisible work for both but it kept changing the image size so that's why two const for visibility.
   const [isVisible, setIsVisible] = useState(true);
@@ -154,6 +153,20 @@ const InitialBackground = () => {
     );
 };
 
+const TextInputBox = () => {
+const [text, onChangeText] = React.useState('');
+  
+    return (
+      <SafeAreaView style={styles.textinputboxes}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeText}
+          placeholder={'Type here...'}
+          value={text}
+        />
+      </SafeAreaView>
+    );
+  };
 
 //This the return to connect everything
 const HomePage = () => {
@@ -163,6 +176,7 @@ const HomePage = () => {
         <FeedTop />
         <InitialBackground />
         <Header3 />
+        <TextInputBox />
         
 
       </ScrollView>
@@ -220,6 +234,17 @@ const styles = {
     alignItems: 'center',
     borderWidth: 1.2,
   },
+  input: {
+    height: 40,
+    width: 350,
+    margin: 35,
+    borderWidth: 1,
+    padding: 12,
+  },
+  textinputboxes: {
+      flex: 1,
+      alignItems: 'center',
+  }
 }
 
 
