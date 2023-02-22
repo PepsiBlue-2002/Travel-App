@@ -96,7 +96,7 @@ const ProfileButton = () => {
 };
 
 //For adding content? Been back-and-forth on this piece, may change it up.
-const Header3 = () => {
+/*const Header3 = () => {
   return (
     <ScrollView>
       <View style={styles.headerContainer3}>
@@ -104,7 +104,7 @@ const Header3 = () => {
       </View>
     </ScrollView>
   )
-};
+};*/
 
 
 //Images used
@@ -169,13 +169,14 @@ const [text, onChangeText] = React.useState('');
   };
 
 //This the return to connect everything
+//This was also a mistake and not how I should've written this code.
 const HomePage = () => {
   return (
       <ScrollView>
         <Header />
         <FeedTop />
         <InitialBackground />
-        <Header3 />
+        {/*<Header3 />*/}
         <TextInputBox />
         
 
