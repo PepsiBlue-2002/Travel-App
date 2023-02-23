@@ -164,6 +164,7 @@ const [text, onChangeText] = React.useState('');
           placeholder={'Type here...'}
           value={text}
         />
+        
       </SafeAreaView>
     );
   };
