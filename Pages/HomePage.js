@@ -145,7 +145,9 @@ const InitialBackground = () => {
           marginTop: 150
         }}>
         {isVisible && (
-          <Text style={styles.InitialBackgroundButton}>Start your adventure</Text>
+          <Button style={styles.InitialBackgroundButton}
+            title="Start your adventure"
+          />
         )}
         </View>
         </TouchableOpacity>
@@ -164,7 +166,11 @@ const [text, onChangeText] = React.useState('');
           placeholder={'Type here...'}
           value={text}
         />
-        
+        <Button
+          title="Learn More"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
       </SafeAreaView>
     );
   };
@@ -178,7 +184,7 @@ const HomePage = () => {
         <FeedTop />
         <InitialBackground />
         {/*<Header3 />*/}
-        <TextInputBox />
+
         
 
       </ScrollView>
