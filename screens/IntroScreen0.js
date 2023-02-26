@@ -9,6 +9,9 @@ import Image2 from '../assets/images/HomeScreen/2-rock.jpg';
 
 //mostly testing for future intro page
 
+//Took this out of package.json because it caused issues
+//"@react-native-picker/picker": "2.4.2",
+
 //Top Header
 const Header = () => {
   return (

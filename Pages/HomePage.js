@@ -96,15 +96,15 @@ const ProfileButton = () => {
 };
 
 //For adding content? Been back-and-forth on this piece, may change it up.
-/*const Header3 = () => {
+const Header3 = () => {
   return (
     <ScrollView>
-      <View style={styles.headerContainer3}>
-        <Text>Add A Tale | Add A Yarn</Text>
+      <View>
+        <TextInputBox />
       </View>
     </ScrollView>
   )
-};*/
+};
 
 
 //Images used
@@ -145,9 +145,9 @@ const InitialBackground = () => {
           marginTop: 150
         }}>
         {isVisible && (
-          <Button style={styles.InitialBackgroundButton}
-            title="Start your adventure"
-          />
+          <Text style={styles.InitialBackgroundButton}>
+            Start your adventure
+          </Text>
         )}
         </View>
         </TouchableOpacity>
@@ -183,7 +183,7 @@ const HomePage = () => {
         <Header />
         <FeedTop />
         <InitialBackground />
-        {/*<Header3 />*/}
+        {<Header3 />}
 
         
 

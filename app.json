@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "Text-Editor-App",
-    "slug": "Text-Editor-App",
+    "name": "Travel-App",
+    "slug": "Travel-App",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
