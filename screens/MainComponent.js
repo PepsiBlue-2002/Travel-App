@@ -14,6 +14,7 @@ import FAQScreen from './FAQScreen';
 import DirectMessagePage from '../Pages/DirectMessagePage';
 import ProfilePage from '../Pages/ProfilePage';
 import IntroScreen0 from './IntroScreen0';
+import LoginScreen from './LoginScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -105,6 +106,23 @@ const Main = () => {
                 size={24}
                 iconStyle={{ width: 24 }}
                 color='red'
+              />
+            )
+          }}
+        />
+
+        <Drawer.Screen
+          name='Login'
+          component={LoginScreen}
+          options={{
+            title: 'Login',
+            drawerIcon: () => (
+              <Icon
+                name='circle'
+                type='font-awesome'
+                size={24}
+                iconStyle={{ width: 24 }}
+                color='black'
               />
             )
           }}

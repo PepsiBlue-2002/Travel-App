@@ -166,10 +166,9 @@ const [text, onChangeText] = React.useState('');
           placeholder={'Type here...'}
           value={text}
         />
-        <Button
-          title="Learn More"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
+        <Button style={styles.submitButton}
+          title="Submit"
+          accessibilityLabel="Submit your post"
         />
       </SafeAreaView>
     );
@@ -232,16 +231,17 @@ const styles = {
     elevation: 2,
     flexDirection: 'column'
   },
-//Add a Post, Add a Tale, etc.
+//Add a Post, Add a Tale, etc. [NOT IN USE]
   headerContainer3: {
     backgroundColor: '#00b377',
   },
-//Currently not in use
+//no idea what this was [NOT IN USE]
   postView: {
     margin: 50,
     alignItems: 'center',
     borderWidth: 1.2,
   },
+//Behind the SYA, Home Page Activity Feed
   input: {
     height: 40,
     width: 350,
@@ -252,7 +252,12 @@ const styles = {
   textinputboxes: {
       flex: 1,
       alignItems: 'center',
-  }
+  },
+  submitButton: {
+    color: 'black',
+    backgroundColor: 'black',
+    borderWidth: 1,
+  },
 }
 
 
